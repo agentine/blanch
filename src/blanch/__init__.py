@@ -3,11 +3,13 @@
 from __future__ import annotations
 
 from blanch.constants import ALLOWED_ATTRIBUTES, ALLOWED_PROTOCOLS, ALLOWED_TAGS
+from blanch.sanitizer import Cleaner
 
 __all__ = [
     "ALLOWED_ATTRIBUTES",
     "ALLOWED_PROTOCOLS",
     "ALLOWED_TAGS",
+    "Cleaner",
     "clean",
     "linkify",
 ]
