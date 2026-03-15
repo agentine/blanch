@@ -3,13 +3,17 @@
 from __future__ import annotations
 
 from blanch.constants import ALLOWED_ATTRIBUTES, ALLOWED_PROTOCOLS, ALLOWED_TAGS
+from blanch.css_sanitizer import CSSSanitizer
+from blanch.linkifier import Linker
 from blanch.sanitizer import Cleaner
 
 __all__ = [
     "ALLOWED_ATTRIBUTES",
     "ALLOWED_PROTOCOLS",
     "ALLOWED_TAGS",
+    "CSSSanitizer",
     "Cleaner",
+    "Linker",
     "clean",
     "linkify",
 ]
