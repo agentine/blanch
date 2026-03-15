@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import Callable
+
 from blanch.constants import ALLOWED_ATTRIBUTES, ALLOWED_PROTOCOLS, ALLOWED_TAGS
 from blanch.css_sanitizer import CSSSanitizer
 from blanch.linkifier import Linker
@@ -24,7 +26,12 @@ __version__ = "0.1.0"
 def clean(
     text: str,
     tags: frozenset[str] | set[str] | list[str] | None = None,
-    attributes: dict[str, list[str]] | None = None,
+    attributes: (
+        dict[str, list[str] | Callable[[str, str, str], bool]]
+        | list[str]
+        | Callable[[str, str, str], bool]
+        | None
+    ) = None,
     protocols: frozenset[str] | set[str] | list[str] | None = None,
     strip: bool = False,
     strip_comments: bool = True,
